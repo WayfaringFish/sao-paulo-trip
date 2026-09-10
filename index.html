@@ -86,6 +86,18 @@
     border-radius:0 8px 8px 0;
   }
 
+  .packlist{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:10px 8px;
+    margin-bottom:18px; padding:14px 12px; border:1px solid var(--line-day); border-radius:14px;
+    background:#fffefb;
+  }
+  .packlist-title{ font-size:13.5px; font-weight:700; margin-bottom:2px; grid-column:1/-1; }
+  .pack-item{ display:flex; align-items:flex-start; gap:6px; font-size:12.5px; line-height:1.35; }
+  .pack-item input{ margin-top:2px; flex-shrink:0; width:16px; height:16px; accent-color:var(--coral); }
+  .pack-item label{ cursor:pointer; }
+  .pack-item.checked label{ text-decoration:line-through; color:#999; }
+
+
   .item{
     display:flex; gap:14px; margin-bottom:2px; position:relative;
   }
@@ -111,6 +123,7 @@
   .item.done .note{ color:#a3a3a3; }
   .item.done{ opacity:.72; }
   .item .note{ font-size:13.5px; color:var(--sub-day); line-height:1.5; }
+  .item .intro{ font-size:13px; color:#444; line-height:1.5; margin-bottom:4px; }
   .item .flag{
     display:inline-block; margin-top:6px; font-size:12px; padding:3px 8px; border-radius:6px;
     background:rgba(226,88,44,0.12); color:var(--coral); font-weight:600;
@@ -168,18 +181,34 @@
 
 <!-- DAY 1 -->
 <div class="day-section active" id="day1">
-  <div class="day-note">通宵大巴到达,一整天几乎没有正式休息。日本街到火锅店、火锅店到酒店都改成地铁+步行，比打车多花点时间，后面的时间点已跟着顺延。</div>
+    <div class="packlist">
+    <div class="packlist-title">出门前检查</div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack1-1" data-id="pack1-1"><label for="chk-pack1-1">护照</label></div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack1-2" data-id="pack1-2"><label for="chk-pack1-2">RNM</label></div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack1-3" data-id="pack1-3"><label for="chk-pack1-3">两张银行卡</label></div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack1-4" data-id="pack1-4"><label for="chk-pack1-4">钥匙</label></div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack1-5" data-id="pack1-5"><label for="chk-pack1-5">手机防丢绳</label></div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack1-6" data-id="pack1-6"><label for="chk-pack1-6">数据线</label></div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack1-7" data-id="pack1-7"><label for="chk-pack1-7">充电器</label></div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack1-8" data-id="pack1-8"><label for="chk-pack1-8">转换插头</label></div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack1-9" data-id="pack1-9"><label for="chk-pack1-9">两个充电宝</label></div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack1-10" data-id="pack1-10"><label for="chk-pack1-10">洗漱包</label></div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack1-11" data-id="pack1-11"><label for="chk-pack1-11">更换衣物</label></div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack1-12" data-id="pack1-12"><label for="chk-pack1-12">拖鞋</label></div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack1-13" data-id="pack1-13"><label for="chk-pack1-13">三天的药</label></div>
+  </div>
 
-  <div class="item">
+
+  <div class="item" id="row-d1-1">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">06:35</div>
       <div class="title"><input type="checkbox" class="chk" id="chk-d1-1" data-id="d1-1"><label for="chk-d1-1"><a href="https://www.google.com/maps/search/?api=1&query=Terminal+Rodovi%C3%A1rio+do+Tiet%C3%AA+S%C3%A3o+Paulo" target="_blank">抵达 Tietê 汽车站</a></label></div>
-      <div class="note">Águia Branca 大巴，全程约6小时30分</div>
+      <div class="note">Águia Branca 大巴 · 站台 57-60(57 A 60) · LEITO INDIVIDUAL 3号位 · 全程约6小时30分</div>
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d1-2">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">06:35 – 07:05</div>
@@ -188,7 +217,7 @@
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d1-3">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">07:05 – 08:00</div>
@@ -197,25 +226,27 @@
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d1-4">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">08:00 – 08:40</div>
       <div class="title"><input type="checkbox" class="chk" id="chk-d1-4" data-id="d1-4"><label for="chk-d1-4"><a href="https://www.google.com/maps/search/?api=1&query=Mosteiro+de+S%C3%A3o+Bento+S%C3%A3o+Paulo" target="_blank">Mosteiro de São Bento</a></label></div>
+      <div class="intro">巴西最古老的本笃会修道院之一，新罗马式建筑，周日弥撒可听格里高利圣咏。</div>
       <div class="note">本笃会修道院，周六开放至12:00</div>
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d1-5">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">08:40 – 09:25</div>
       <div class="title"><input type="checkbox" class="chk" id="chk-d1-5" data-id="d1-5"><label for="chk-d1-5"><a href="https://www.google.com/maps/search/?api=1&query=P%C3%A1tio+do+Col%C3%A9gio+S%C3%A3o+Paulo" target="_blank">Pátio do Colégio</a></label></div>
+      <div class="intro">圣保罗建城起点，耶稣会传教士1554年在此建立最早的学校和教堂，城市历史的原点。</div>
       <div class="note">露天学堂广场</div>
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d1-6">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">09:25 – 10:00</div>
@@ -225,34 +256,37 @@
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d1-x7">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">10:00 – 11:30</div>
       <div class="title"><input type="checkbox" class="chk" id="chk-d1-x7" data-id="d1-x7"><label for="chk-d1-x7"><a href="https://www.google.com/maps/search/?api=1&query=Pinacoteca+de+S%C3%A3o+Paulo" target="_blank">Pinacoteca 州立美术馆</a></label></div>
       <div class="note">周六免费入场</div>
+      <div class="intro">圣保罗最古老的美术馆，收藏19-20世纪巴西艺术，建筑本身也是百年历史古迹。</div>
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d1-7">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">11:30 – 12:30</div>
       <div class="title"><input type="checkbox" class="chk" id="chk-d1-7" data-id="d1-7"><label for="chk-d1-7"><a href="https://www.google.com/maps/search/?api=1&query=Rua+25+de+Mar%C3%A7o+S%C3%A3o+Paulo" target="_blank">25街</a></label></div>
-      <div class="note">逛街 + 开心煎饼芋圆奶茶 + 蜜雪冰城</div>
+      <div class="note">开心煎饼芋圆奶茶 + 蜜雪冰城</div>
+      <div class="intro">南美最大的批发商圈，狭窄街道挤满店铺摊贩，热闹嘈杂是这里的日常。</div>
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d1-8">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">12:30 – 13:10</div>
       <div class="title"><input type="checkbox" class="chk" id="chk-d1-8" data-id="d1-8"><label for="chk-d1-8"><a href="https://www.google.com/maps/search/?api=1&query=Catedral+da+S%C3%A9+S%C3%A3o+Paulo" target="_blank">圣保罗主教座堂</a></label></div>
       <div class="note">周六开放至17:00</div>
+      <div class="intro">新哥特式主教座堂，可容纳8000人，圣保罗老城区的地标建筑。</div>
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d1-9">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">13:10 – 14:00</div>
@@ -261,16 +295,17 @@
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d1-10">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">14:00 – 14:40</div>
       <div class="title"><input type="checkbox" class="chk" id="chk-d1-10" data-id="d1-10"><label for="chk-d1-10"><a href="https://www.google.com/maps/search/?api=1&query=Liberdade+S%C3%A3o+Paulo" target="_blank">自由区 / 日本街</a></label></div>
+      <div class="intro">南美最大的日本/东亚移民聚居区，红灯笼牌坊、亚洲超市和小吃是标志性风景。</div>
       <div class="note">步行穿行</div>
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d1-11">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">14:40 – 15:20</div>
@@ -280,7 +315,7 @@
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d1-12">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">15:20 – 16:20</div>
@@ -289,7 +324,7 @@
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d1-13">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">16:20 – 17:00</div>
@@ -298,7 +333,7 @@
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d1-14">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">17:00 – 18:20</div>
@@ -307,7 +342,7 @@
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d1-x16">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">18:20 – 18:35</div>
@@ -315,7 +350,7 @@
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d1-15">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">18:35 – 19:50</div>
@@ -324,7 +359,7 @@
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d1-16">
     <div class="rail"><div class="dot"></div></div>
     <div class="body">
       <div class="time">19:50 – 20:05</div>
@@ -335,9 +370,25 @@
 
 <!-- DAY 2 -->
 <div class="day-section" id="day2">
-  <div class="day-note">当晚不返回酒店，晚餐后直接经地铁前往 Tietê 汽车站赶 00:05 大巴（次日凌晨，已计入当天末尾）。天府饭店在 Brooklin，离自由区较远，末段地铁路线已改为 Faria Lima→Luz 换乘。</div>
+    <div class="packlist">
+    <div class="packlist-title">出门前检查</div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack2-1" data-id="pack2-1"><label for="chk-pack2-1">护照</label></div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack2-2" data-id="pack2-2"><label for="chk-pack2-2">RNM</label></div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack2-3" data-id="pack2-3"><label for="chk-pack2-3">两张银行卡</label></div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack2-4" data-id="pack2-4"><label for="chk-pack2-4">钥匙</label></div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack2-5" data-id="pack2-5"><label for="chk-pack2-5">手机防丢绳</label></div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack2-6" data-id="pack2-6"><label for="chk-pack2-6">数据线</label></div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack2-7" data-id="pack2-7"><label for="chk-pack2-7">充电器</label></div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack2-8" data-id="pack2-8"><label for="chk-pack2-8">转换插头</label></div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack2-9" data-id="pack2-9"><label for="chk-pack2-9">两个充电宝</label></div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack2-10" data-id="pack2-10"><label for="chk-pack2-10">洗漱包</label></div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack2-11" data-id="pack2-11"><label for="chk-pack2-11">更换衣物</label></div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack2-12" data-id="pack2-12"><label for="chk-pack2-12">拖鞋</label></div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack2-13" data-id="pack2-13"><label for="chk-pack2-13">三天的药</label></div>
+  </div>
 
-  <div class="item">
+
+  <div class="item" id="row-d2-1">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">09:15</div>
@@ -346,26 +397,28 @@
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d2-2">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">09:15 – 09:50</div>
       <div class="title"><input type="checkbox" class="chk" id="chk-d2-2" data-id="d2-2"><label for="chk-d2-2"><a href="https://www.google.com/maps/search/?api=1&query=Avenida+Paulista+S%C3%A3o+Paulo" target="_blank">Avenida Paulista</a></label></div>
       <div class="note">沿街漫步、建筑打卡</div>
+      <div class="intro">圣保罗最著名的大道，2.8公里长，沿线金融机构、博物馆和文化地标云集。</div>
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d2-3">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">09:50 – 11:30</div>
       <div class="title"><input type="checkbox" class="chk" id="chk-d2-3" data-id="d2-3"><label for="chk-d2-3"><a href="https://www.google.com/maps/search/?api=1&query=MASP+Avenida+Paulista+1578" target="_blank">MASP</a></label></div>
-      <div class="note">认真看展，不只是打卡建筑</div>
-      <span class="flag">需提前网上订票 masp.org.br</span>
+      <div class="note">门票已预约10:00场次</div>
+      <div class="intro">巴西最重要的艺术博物馆，标志性红色混凝土悬空建筑，收藏欧洲大师名作。</div>
+      <span class="flag">务必在10:30前进场，逾期作废</span>
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d2-x4">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">11:30 – 12:00</div>
@@ -374,95 +427,94 @@
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d2-4">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
-      <div class="time">12:00 – 13:30</div>
+      <div class="time">12:00 – 14:00</div>
       <div class="title"><input type="checkbox" class="chk" id="chk-d2-4" data-id="d2-4"><label for="chk-d2-4"><a href="https://www.google.com/maps/search/?api=1&query=Av.+Arat%C3%A3s+765+Indian%C3%B3polis+S%C3%A3o+Paulo" target="_blank">Sushi Nami</a></label></div>
-      <div class="note">Av. Aratãs, 765 - Indianópolis · 正式午餐，不用一次吃尽兴</div>
-      <span class="flag">建议提前订位，准时到店免排队</span>
+      <div class="note">Av. Aratãs, 765 - Indianópolis</div>
+      <span class="flag">隐藏菜单需直接跟服务员说：生蚝(Ostras)、和牛(Wagyu)、帝王蟹(Caranguejo-rei)、鳗鱼(Enguia)、多色飞鱼籽(Tobiko colorido)、鹅肝(Foie gras)</span>
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d2-6">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
-      <div class="time">13:30 – 14:45</div>
-      <div class="title"><input type="checkbox" class="chk" id="chk-d2-x6" data-id="d2-x6"><label for="chk-d2-x6">前往 Parque Ibirapuera</label></div>
+      <div class="time">14:00 – 14:10</div>
+      <div class="title"><input type="checkbox" class="chk" id="chk-d2-6" data-id="d2-6"><label for="chk-d2-6"><a href="https://www.google.com/maps/search/?api=1&query=Ibirapuera+Shopping+S%C3%A3o+Paulo" target="_blank">步行前往 Ibirapuera Shopping</a></label></div>
+      <div class="note">预计10分钟</div>
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d2-7">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
-      <div class="time">14:45 – 16:45</div>
-      <div class="title"><input type="checkbox" class="chk" id="chk-d2-5" data-id="d2-5"><label for="chk-d2-5"><a href="https://www.google.com/maps/search/?api=1&query=Parque+Ibirapuera+S%C3%A3o+Paulo" target="_blank">公园漫步 + Amalfi Sorvetes</a></label></div>
-      <div class="note">弹性时段：身体状态决定停留长短</div>
+      <div class="time">14:10 – 15:10</div>
+      <div class="title"><input type="checkbox" class="chk" id="chk-d2-7" data-id="d2-7"><label for="chk-d2-7"><a href="https://www.google.com/maps/search/?api=1&query=Ibirapuera+Shopping+S%C3%A3o+Paulo" target="_blank">Ibirapuera Shopping/Faria Lima</a></label></div>
+      <div class="note">Le Labo、Prada</div>
+      <div class="note">圣保罗的新金融/时尚商圈，高档写字楼与奢侈品店林立，堪称巴西的曼哈顿。</div>
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d2-x6">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
-      <div class="time">16:45 – 17:25</div>
-      <div class="title"><input type="checkbox" class="chk" id="chk-d2-6" data-id="d2-6"><label for="chk-d2-6">公交前往 Iguatemi / Faria Lima</label></div>
-      <div class="note">无直达地铁，用地图App实时查公交路线，预留40分钟</div>
+      <div class="time">15:10 – 15:30</div>
+      <div class="title"><input type="checkbox" class="chk" id="chk-d2-x6" data-id="d2-x6"><label for="chk-d2-x6"><a href="https://www.google.com/maps/search/?api=1&query=Parque+Ibirapuera+S%C3%A3o+Paulo" target="_blank">公交前往 Parque Ibirapuera</a></label></div>
+      <div class="intro">圣保罗最大的城市公园，仿纽约中央公园设计，湖泊、步道和野生水豚随处可见。</div>
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d2-5">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
-      <div class="time">17:25 – 19:00</div>
-      <div class="title"><input type="checkbox" class="chk" id="chk-d2-7" data-id="d2-7"><label for="chk-d2-7"><a href="https://www.google.com/maps/search/?api=1&query=Shopping+Iguatemi+Avenida+Brigadeiro+Faria+Lima+2232" target="_blank">Le Labo + Faria Lima 逛街</a></label></div>
-      <div class="note">Le Labo 周日 14:00–20:00，出发前再确认一次</div>
+      <div class="time">15:30 – 18:00</div>
+      <div class="title"><input type="checkbox" class="chk" id="chk-d2-5" data-id="d2-5"><label for="chk-d2-5"><a href="https://www.google.com/maps/search/?api=1&query=Amalfi+Sorvetes+Parque+Ibirapuera+S%C3%A3o+Paulo" target="_blank">公园漫步 + Amalfi Sorvetes</a></label></div>
+      <div class="note">有水豚，冰淇淋推荐柠檬</div>
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d2-8">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
-      <div class="time">19:00 – 19:30</div>
-      <div class="title"><input type="checkbox" class="chk" id="chk-d2-8" data-id="d2-8"><label for="chk-d2-8"><a href="https://www.google.com/maps/search/?api=1&query=Av.+Padre+Ant%C3%B4nio+Jos%C3%A9+dos+Santos+1679+Brooklin+S%C3%A3o+Paulo" target="_blank">前往天府饭店</a></label></div>
-      <div class="note">Av. Padre Antônio José dos Santos, 1679 - Brooklin · 离 Faria Lima 不远，顺路</div>
-      <span class="flag">建议确认周日营业情况</span>
+      <div class="time">18:00 – 18:40</div>
+      <div class="title"><input type="checkbox" class="chk" id="chk-d2-8" data-id="d2-8"><label for="chk-d2-8"><a href="https://www.google.com/maps/search/?api=1&query=Av.+Padre+Ant%C3%B4nio+Jos%C3%A9+dos+Santos+1679+Brooklin+S%C3%A3o+Paulo" target="_blank">公交前往天府饭店</a></label></div>
+      <div class="note">Av. Padre Antônio José dos Santos, 1679 - Brooklin · 约40分钟</div>
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d2-x11">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
-      <div class="time">19:30 – 20:30</div>
+      <div class="time">18:40 – 20:10</div>
       <div class="title"><input type="checkbox" class="chk" id="chk-d2-x11" data-id="d2-x11"><label for="chk-d2-x11">天府饭店晚餐</label></div>
-      <div class="note">少量堂食，大部分打包带走</div>
+      <div class="note">营业时间 18:00–22:00 · 堂食鸡丝凉面，打包口水鸡和宫保鸡丁，让饭店用保鲜膜多封几次口，打包袋多包几层</div>
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d2-9">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
-      <div class="time">20:30 – 21:15</div>
-      <div class="title"><input type="checkbox" class="chk" id="chk-d2-9" data-id="d2-9"><label for="chk-d2-9">打车/步行至 Faria Lima 地铁站，转乘至 Tietê</label></div>
-      <div class="note">Brooklin 离 Liberdade 较远，改走：4号线黄线 Faria Lima → Luz 站换乘 1号线蓝线 → Portuguesa-Tietê</div>
-      <span class="flag">路线已从"经Liberdade"改为此路线</span>
+      <div class="time">20:10 – 20:55</div>
+      <div class="title"><input type="checkbox" class="chk" id="chk-d2-9" data-id="d2-9"><label for="chk-d2-9"><a href="https://www.google.com/maps/search/?api=1&query=Terminal+Rodovi%C3%A1rio+do+Tiet%C3%AA+S%C3%A3o+Paulo" target="_blank">打车/步行至地铁站，转乘至 Tietê</a></label></div>
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d2-x13">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
-      <div class="time">21:15 – 00:05</div>
+      <div class="time">20:55 – 00:05</div>
       <div class="title"><input type="checkbox" class="chk" id="chk-d2-x13" data-id="d2-x13"><label for="chk-d2-x13">车站等候</label></div>
-      <div class="note">约2小时50分钟</div>
     </div>
   </div>
 
-  <div class="item">
+  <div class="item" id="row-d2-10">
     <div class="rail"><div class="dot"></div></div>
     <div class="body">
       <div class="time">00:05（9/14 周一）</div>
       <div class="title"><input type="checkbox" class="chk" id="chk-d2-10" data-id="d2-10"><label for="chk-d2-10"><a href="https://www.google.com/maps/search/?api=1&query=Terminal+Rodovi%C3%A1rio+do+Tiet%C3%AA+S%C3%A3o+Paulo" target="_blank">大巴出发返回里约</a></label></div>
-      <div class="note">Águia Branca，全程约6小时30分</div>
+      <div class="note">Águia Branca，站台 05 · LEITO INDIVIDUAL 34号座 · 全程约6小时30分</div>
+      <span class="flag">检票二维码在PDF里，提前存到手机</span>
     </div>
   </div>
 </div>
@@ -471,24 +523,31 @@
   <h2>已确认信息</h2>
   <div class="confirm-card">
     <div class="k">去程大巴（Águia Branca）</div>
-    <div class="v">9/12 周六 00:05 里约 Novo Rio → 06:35 圣保罗 Tietê</div>
+    <div class="v">已购票 · 9/12 周六 00:05 里约 Novo Rio → 06:35 圣保罗 Tietê · 站台 57-60(57 A 60) · LEITO INDIVIDUAL 3号位</div>
   </div>
   <div class="confirm-card">
     <div class="k">返程大巴（Águia Branca）</div>
-    <div class="v">9/14 周一 00:05 圣保罗 Tietê → 06:35 里约 Novo Rio</div>
+    <div class="v">已购票 · 9/14 周一 00:05 圣保罗 Tietê → 06:35 里约 Novo Rio · 站台 05 · LEITO INDIVIDUAL 34号座</div>
+  </div>
+  <div class="confirm-card">
+    <div class="k">车票二维码</div>
+    <div class="v">存在PDF里，出发前下载/截图存到手机相册，避免到时没网</div>
   </div>
   <div class="confirm-card">
     <div class="k">酒店</div>
     <div class="v">已确认 · Av. Paulista, 2355, Cerqueira César, 01311-300</div>
+  </div>
+  <div class="confirm-card">
+    <div class="k">MASP 门票</div>
+    <div class="v">已预约 · 9/13 周日 10:00 场次，务必10:30前进场 · 入场二维码在邮箱里，提前截图保存</div>
   </div>
 </section>
 
 <section class="block">
   <h2>待办清单</h2>
   <ul class="plain">
-    <li>MASP 网上订票（周日场次）</li>
+    <li>把车票PDF和MASP邮箱二维码提前截图存到手机相册（离线也能用）</li>
     <li>Sushi Nami 提前订位</li>
-    <li>出发当天确认 Le Labo Iguatemi 营业时间</li>
     <li>确认天府饭店周日是否营业、要不要订位</li>
   </ul>
 </section>
@@ -498,7 +557,6 @@
   <div class="tips">
     <p>Mosteiro de São Bento 周六仅开放 6:00–12:00 及 16:00–18:00，第一天安排在上午没问题。</p>
     <p>圣保罗主教座堂周六开放至 17:00，第一天中午参观不受影响。</p>
-    <p>Ibirapuera 到 Faria Lima 之间没有直达地铁，建议出发前用地图App实时查公交路线，或视情况改打车。</p>
     <p>全程巴西时间为 UTC-3，倒计时和所有时间点均已按此计算，跨时区打开本页面不会算错。</p>
   </div>
 </section>
@@ -524,11 +582,11 @@
     { name: "Day2：出发前往 Paulista", time: "2026-09-13T09:15:00-03:00" },
     { name: "MASP 开馆", time: "2026-09-13T10:00:00-03:00" },
     { name: "Sushi Nami 午餐", time: "2026-09-13T12:00:00-03:00" },
-    { name: "Parque Ibirapuera", time: "2026-09-13T14:45:00-03:00" },
-    { name: "Le Labo / Faria Lima", time: "2026-09-13T17:25:00-03:00" },
-    { name: "天府饭店晚餐", time: "2026-09-13T19:30:00-03:00" },
-    { name: "前往 Tietê 车站", time: "2026-09-13T20:30:00-03:00" },
-    { name: "车站等候开始", time: "2026-09-13T21:15:00-03:00" },
+    { name: "Ibirapuera Shopping/Faria Lima", time: "2026-09-13T14:10:00-03:00" },
+    { name: "Parque Ibirapuera", time: "2026-09-13T15:30:00-03:00" },
+    { name: "天府饭店晚餐", time: "2026-09-13T18:40:00-03:00" },
+    { name: "前往 Tietê 车站", time: "2026-09-13T20:10:00-03:00" },
+    { name: "车站等候开始", time: "2026-09-13T20:55:00-03:00" },
     { name: "返程大巴出发", time: "2026-09-14T00:05:00-03:00" },
   ];
 
@@ -574,10 +632,11 @@
   }catch(e){ checkedState = {}; }
 
   const allChecks = document.querySelectorAll('.chk');
+  const itineraryChecks = document.querySelectorAll('.item .chk');
 
   function updateProgress(){
-    const total = allChecks.length;
-    const done = Array.from(allChecks).filter(c=>c.checked).length;
+    const total = itineraryChecks.length;
+    const done = Array.from(itineraryChecks).filter(c=>c.checked).length;
     document.getElementById('progressLine').textContent = `已完成 ${done} / ${total} 项`;
   }
 
@@ -586,7 +645,10 @@
       const id = chk.dataset.id;
       const isChecked = !!checkedState[id];
       chk.checked = isChecked;
-      chk.closest('.item').classList.toggle('done', isChecked);
+      const row = chk.closest('.item');
+      if(row) row.classList.toggle('done', isChecked);
+      const packRow = chk.closest('.pack-item');
+      if(packRow) packRow.classList.toggle('checked', isChecked);
     });
     updateProgress();
   }
@@ -595,13 +657,17 @@
     chk.addEventListener('change', ()=>{
       const id = chk.dataset.id;
       checkedState[id] = chk.checked;
-      chk.closest('.item').classList.toggle('done', chk.checked);
+      const row = chk.closest('.item');
+      if(row) row.classList.toggle('done', chk.checked);
+      const packRow = chk.closest('.pack-item');
+      if(packRow) packRow.classList.toggle('checked', chk.checked);
       try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(checkedState)); }catch(e){}
       updateProgress();
     });
   });
 
   applyState();
+
 
   // day tabs
   document.querySelectorAll('.tab').forEach(tab=>{
