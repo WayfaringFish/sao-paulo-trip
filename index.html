@@ -41,6 +41,18 @@
     font-size:14px; color:var(--sub-day);
   }
 
+  .danger-warning{
+    margin:0 20px 18px;
+    padding:14px 16px;
+    background:#c9401a;
+    color:#fff;
+    font-size:15px;
+    font-weight:800;
+    text-align:center;
+    border-radius:12px;
+    line-height:1.5;
+  }
+
   /* countdown card */
   .now-card{
     margin:14px 20px 22px;
@@ -135,14 +147,6 @@
     font-size:18px; margin:0 0 12px; padding-bottom:8px; border-bottom:2px solid var(--ink);
   }
 
-  .confirm-card{
-    background:var(--card-day); border-radius:14px; padding:14px 16px; margin-bottom:10px;
-    border:1px solid var(--line-day);
-  }
-  .confirm-card .k{ font-size:13px; color:var(--sub-day); }
-  .confirm-card .v{ font-size:15px; font-weight:600; margin-top:2px; }
-  .confirm-card .pending{ color:var(--coral); font-weight:700; }
-
   ul.plain{ margin:0; padding-left:20px; font-size:14.5px; line-height:1.9; }
   ul.plain li{ margin-bottom:2px; }
 
@@ -161,6 +165,8 @@
   <h1>圣保罗两天三夜</h1>
   <div class="dates">9月12日(周六)06:35 抵达 — 9月14日(周一)00:05 离开 · 当地时间 UTC-3</div>
 </div>
+
+<div class="danger-warning">⚠️ 不要拿手机，包括Uber里！<br>⚠️ 书包背前面！</div>
 
 <div class="now-card" id="nowCard">
   <div class="label">此刻关注</div>
@@ -196,6 +202,7 @@
     <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack1-11" data-id="pack1-11"><label for="chk-pack1-11">更换衣物</label></div>
     <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack1-12" data-id="pack1-12"><label for="chk-pack1-12">拖鞋</label></div>
     <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack1-13" data-id="pack1-13"><label for="chk-pack1-13">三天的药</label></div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack1-14" data-id="pack1-14"><label for="chk-pack1-14">拍立得和相纸</label></div>
   </div>
 
 
@@ -230,7 +237,7 @@
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">08:00 – 08:40</div>
-      <div class="title"><input type="checkbox" class="chk" id="chk-d1-4" data-id="d1-4"><label for="chk-d1-4"><a href="https://www.google.com/maps/search/?api=1&query=Mosteiro+de+S%C3%A3o+Bento+S%C3%A3o+Paulo" target="_blank">Mosteiro de São Bento</a></label></div>
+      <div class="title"><input type="checkbox" class="chk" id="chk-d1-4" data-id="d1-4"><label for="chk-d1-4"><a href="https://maps.apple.com/?daddr=Mosteiro+de+S%C3%A3o+Bento%2C+S%C3%A3o+Paulo&dirflg=w" target="_blank">Mosteiro de São Bento</a></label></div>
       <div class="intro">巴西最古老的本笃会修道院之一，新罗马式建筑，周日弥撒可听格里高利圣咏。</div>
       <div class="note">本笃会修道院，周六开放至12:00</div>
     </div>
@@ -240,7 +247,7 @@
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">08:40 – 09:25</div>
-      <div class="title"><input type="checkbox" class="chk" id="chk-d1-5" data-id="d1-5"><label for="chk-d1-5"><a href="https://www.google.com/maps/search/?api=1&query=P%C3%A1tio+do+Col%C3%A9gio+S%C3%A3o+Paulo" target="_blank">Pátio do Colégio</a></label></div>
+      <div class="title"><input type="checkbox" class="chk" id="chk-d1-5" data-id="d1-5"><label for="chk-d1-5"><a href="https://maps.apple.com/?daddr=P%C3%A1tio+do+Col%C3%A9gio%2C+S%C3%A3o+Paulo&dirflg=w" target="_blank">Pátio do Colégio</a></label></div>
       <div class="intro">圣保罗建城起点，耶稣会传教士1554年在此建立最早的学校和教堂，城市历史的原点。</div>
       <div class="note">露天学堂广场</div>
     </div>
@@ -250,7 +257,7 @@
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">09:25 – 10:00</div>
-      <div class="title"><input type="checkbox" class="chk" id="chk-d1-6" data-id="d1-6"><label for="chk-d1-6"><a href="https://www.google.com/maps/search/?api=1&query=Pinacoteca+de+S%C3%A3o+Paulo" target="_blank">前往 Pinacoteca</a></label></div>
+      <div class="title"><input type="checkbox" class="chk" id="chk-d1-6" data-id="d1-6"><label for="chk-d1-6"><a href="https://maps.apple.com/?daddr=Pinacoteca+de+S%C3%A3o+Paulo&dirflg=w" target="_blank">前往 Pinacoteca</a></label></div>
       <div class="note">步行/地铁至 Praça da Luz，等候开门</div>
       <span class="flag">周六 10:00 才开门</span>
     </div>
@@ -260,7 +267,7 @@
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">10:00 – 11:30</div>
-      <div class="title"><input type="checkbox" class="chk" id="chk-d1-x7" data-id="d1-x7"><label for="chk-d1-x7"><a href="https://www.google.com/maps/search/?api=1&query=Pinacoteca+de+S%C3%A3o+Paulo" target="_blank">Pinacoteca 州立美术馆</a></label></div>
+      <div class="title"><input type="checkbox" class="chk" id="chk-d1-x7" data-id="d1-x7"><label for="chk-d1-x7"><a href="https://maps.apple.com/?daddr=Pinacoteca+de+S%C3%A3o+Paulo&dirflg=w" target="_blank">Pinacoteca 州立美术馆</a></label></div>
       <div class="note">周六免费入场</div>
       <div class="intro">圣保罗最古老的美术馆，收藏19-20世纪巴西艺术，建筑本身也是百年历史古迹。</div>
     </div>
@@ -270,7 +277,7 @@
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">11:30 – 12:30</div>
-      <div class="title"><input type="checkbox" class="chk" id="chk-d1-7" data-id="d1-7"><label for="chk-d1-7"><a href="https://www.google.com/maps/search/?api=1&query=Rua+25+de+Mar%C3%A7o+S%C3%A3o+Paulo" target="_blank">25街</a></label></div>
+      <div class="title"><input type="checkbox" class="chk" id="chk-d1-7" data-id="d1-7"><label for="chk-d1-7"><a href="https://maps.apple.com/?daddr=Rua+25+de+Mar%C3%A7o%2C+S%C3%A3o+Paulo&dirflg=w" target="_blank">25街</a></label></div>
       <div class="note">开心煎饼芋圆奶茶 + 蜜雪冰城</div>
       <div class="intro">南美最大的批发商圈，狭窄街道挤满店铺摊贩，热闹嘈杂是这里的日常。</div>
     </div>
@@ -280,7 +287,7 @@
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">12:30 – 13:10</div>
-      <div class="title"><input type="checkbox" class="chk" id="chk-d1-8" data-id="d1-8"><label for="chk-d1-8"><a href="https://www.google.com/maps/search/?api=1&query=Catedral+da+S%C3%A9+S%C3%A3o+Paulo" target="_blank">圣保罗主教座堂</a></label></div>
+      <div class="title"><input type="checkbox" class="chk" id="chk-d1-8" data-id="d1-8"><label for="chk-d1-8"><a href="https://maps.apple.com/?daddr=Catedral+da+S%C3%A9%2C+S%C3%A3o+Paulo&dirflg=w" target="_blank">圣保罗主教座堂</a></label></div>
       <div class="note">周六开放至17:00</div>
       <div class="intro">新哥特式主教座堂，可容纳8000人，圣保罗老城区的地标建筑。</div>
     </div>
@@ -290,7 +297,7 @@
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">13:10 – 14:00</div>
-      <div class="title"><input type="checkbox" class="chk" id="chk-d1-9" data-id="d1-9"><label for="chk-d1-9"><a href="https://www.google.com/maps/search/?api=1&query=R.+da+Gl%C3%B3ria+132+Liberdade+S%C3%A3o+Paulo" target="_blank">佳合超市</a></label></div>
+      <div class="title"><input type="checkbox" class="chk" id="chk-d1-9" data-id="d1-9"><label for="chk-d1-9"><a href="https://maps.apple.com/?daddr=R.+da+Gl%C3%B3ria+132%2C+Liberdade%2C+S%C3%A3o+Paulo&dirflg=w" target="_blank">佳合超市</a></label></div>
       <div class="note">R. da Glória, 132 - Liberdade · 华人超市</div>
     </div>
   </div>
@@ -299,7 +306,7 @@
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">14:00 – 14:40</div>
-      <div class="title"><input type="checkbox" class="chk" id="chk-d1-10" data-id="d1-10"><label for="chk-d1-10"><a href="https://www.google.com/maps/search/?api=1&query=Liberdade+S%C3%A3o+Paulo" target="_blank">自由区 / 日本街</a></label></div>
+      <div class="title"><input type="checkbox" class="chk" id="chk-d1-10" data-id="d1-10"><label for="chk-d1-10"><a href="https://maps.apple.com/?daddr=Liberdade%2C+S%C3%A3o+Paulo&dirflg=w" target="_blank">自由区 / 日本街</a></label></div>
       <div class="intro">南美最大的日本/东亚移民聚居区，红灯笼牌坊、亚洲超市和小吃是标志性风景。</div>
       <div class="note">步行穿行</div>
     </div>
@@ -346,7 +353,7 @@
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">18:20 – 18:35</div>
-      <div class="title"><input type="checkbox" class="chk" id="chk-d1-x16" data-id="d1-x16"><label for="chk-d1-x16">步行至 Bar Astor Paulista</label></div>
+      <div class="title"><input type="checkbox" class="chk" id="chk-d1-x16" data-id="d1-x16"><label for="chk-d1-x16"><a href="https://maps.apple.com/?daddr=Alameda+Ministro+Rocha+Azevedo%2C+72%2C+S%C3%A3o+Paulo&dirflg=w" target="_blank">步行至 Bar Astor Paulista</a></label></div>
     </div>
   </div>
 
@@ -363,7 +370,7 @@
     <div class="rail"><div class="dot"></div></div>
     <div class="body">
       <div class="time">19:50 – 20:05</div>
-      <div class="title"><input type="checkbox" class="chk" id="chk-d1-16" data-id="d1-16"><label for="chk-d1-16">返回酒店休息</label></div>
+      <div class="title"><input type="checkbox" class="chk" id="chk-d1-16" data-id="d1-16"><label for="chk-d1-16"><a href="https://maps.apple.com/?daddr=Av.+Paulista%2C+2355%2C+Cerqueira+Cesar%2C+S%C3%A3o+Paulo&dirflg=w" target="_blank">返回酒店休息</a></label></div>
     </div>
   </div>
 </div>
@@ -385,6 +392,7 @@
     <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack2-11" data-id="pack2-11"><label for="chk-pack2-11">更换衣物</label></div>
     <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack2-12" data-id="pack2-12"><label for="chk-pack2-12">拖鞋</label></div>
     <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack2-13" data-id="pack2-13"><label for="chk-pack2-13">三天的药</label></div>
+    <div class="pack-item"><input type="checkbox" class="chk" id="chk-pack2-14" data-id="pack2-14"><label for="chk-pack2-14">拍立得和相纸</label></div>
   </div>
 
 
@@ -441,7 +449,7 @@
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">14:00 – 14:10</div>
-      <div class="title"><input type="checkbox" class="chk" id="chk-d2-6" data-id="d2-6"><label for="chk-d2-6"><a href="https://www.google.com/maps/search/?api=1&query=Ibirapuera+Shopping+S%C3%A3o+Paulo" target="_blank">步行前往 Ibirapuera Shopping</a></label></div>
+      <div class="title"><input type="checkbox" class="chk" id="chk-d2-6" data-id="d2-6"><label for="chk-d2-6"><a href="https://maps.apple.com/?daddr=Ibirapuera+Shopping%2C+S%C3%A3o+Paulo&dirflg=w" target="_blank">步行前往 Ibirapuera Shopping</a></label></div>
       <div class="note">预计10分钟</div>
     </div>
   </div>
@@ -492,18 +500,39 @@
     </div>
   </div>
 
-  <div class="item" id="row-d2-9">
+  <div class="item" id="row-d2-terraco-go">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
       <div class="time">20:10 – 20:55</div>
-      <div class="title"><input type="checkbox" class="chk" id="chk-d2-9" data-id="d2-9"><label for="chk-d2-9"><a href="https://www.google.com/maps/search/?api=1&query=Terminal+Rodovi%C3%A1rio+do+Tiet%C3%AA+S%C3%A3o+Paulo" target="_blank">打车/步行至地铁站，转乘至 Tietê</a></label></div>
+      <div class="title"><input type="checkbox" class="chk" id="chk-d2-terraco-go" data-id="d2-terraco-go"><label for="chk-d2-terraco-go">地铁前往 Terraço Itália</label></div>
+      <div class="note">Campo Belo（5号线）→ Santa Cruz 换乘1号线蓝线 → Sé 换乘3号线红线 → República，2次换乘，出发前用地图App核实当天实时路线</div>
+    </div>
+  </div>
+
+  <div class="item" id="row-d2-terraco">
+    <div class="rail"><div class="dot"></div><div class="line"></div></div>
+    <div class="body">
+      <div class="time">20:55 – 21:55</div>
+      <div class="title"><input type="checkbox" class="chk" id="chk-d2-terraco" data-id="d2-terraco"><label for="chk-d2-terraco"><a href="https://www.google.com/maps/search/?api=1&query=Terra%C3%A7o+It%C3%A1lia+Av.+Ipiranga+344+S%C3%A3o+Paulo" target="_blank">Terraço Itália 看夜景</a></label></div>
+      <div class="note">Av. Ipiranga, 344, República · 周日营业至23:00</div>
+      <div class="intro">44层高楼顶的观景餐厅，360度俯瞰圣保罗夜景，曾是南美最高建筑。</div>
+      <span class="flag">白天15:00-19:00的观景平台门票这个点已经用不了，这个时间只能以餐厅/酒吧顾客身份进入（点一杯饮品）</span>
+    </div>
+  </div>
+
+  <div class="item" id="row-d2-9">
+    <div class="rail"><div class="dot"></div><div class="line"></div></div>
+    <div class="body">
+      <div class="time">21:55 – 22:15</div>
+      <div class="title"><input type="checkbox" class="chk" id="chk-d2-9" data-id="d2-9"><label for="chk-d2-9"><a href="https://www.google.com/maps/search/?api=1&query=Terminal+Rodovi%C3%A1rio+do+Tiet%C3%AA+S%C3%A3o+Paulo" target="_blank">地铁前往 Tietê 车站</a></label></div>
+      <div class="note">República 乘3号线红线 → Sé 换乘1号线蓝线 → Portuguesa-Tietê，1次换乘</div>
     </div>
   </div>
 
   <div class="item" id="row-d2-x13">
     <div class="rail"><div class="dot"></div><div class="line"></div></div>
     <div class="body">
-      <div class="time">20:55 – 00:05</div>
+      <div class="time">22:15 – 00:05</div>
       <div class="title"><input type="checkbox" class="chk" id="chk-d2-x13" data-id="d2-x13"><label for="chk-d2-x13">车站等候</label></div>
     </div>
   </div>
@@ -518,39 +547,6 @@
     </div>
   </div>
 </div>
-
-<section class="block">
-  <h2>已确认信息</h2>
-  <div class="confirm-card">
-    <div class="k">去程大巴（Águia Branca）</div>
-    <div class="v">已购票 · 9/12 周六 00:05 里约 Novo Rio → 06:35 圣保罗 Tietê · 站台 57-60(57 A 60) · LEITO INDIVIDUAL 3号位</div>
-  </div>
-  <div class="confirm-card">
-    <div class="k">返程大巴（Águia Branca）</div>
-    <div class="v">已购票 · 9/14 周一 00:05 圣保罗 Tietê → 06:35 里约 Novo Rio · 站台 05 · LEITO INDIVIDUAL 34号座</div>
-  </div>
-  <div class="confirm-card">
-    <div class="k">车票二维码</div>
-    <div class="v">存在PDF里，出发前下载/截图存到手机相册，避免到时没网</div>
-  </div>
-  <div class="confirm-card">
-    <div class="k">酒店</div>
-    <div class="v">已确认 · Av. Paulista, 2355, Cerqueira César, 01311-300</div>
-  </div>
-  <div class="confirm-card">
-    <div class="k">MASP 门票</div>
-    <div class="v">已预约 · 9/13 周日 10:00 场次，务必10:30前进场 · 入场二维码在邮箱里，提前截图保存</div>
-  </div>
-</section>
-
-<section class="block">
-  <h2>待办清单</h2>
-  <ul class="plain">
-    <li>把车票PDF和MASP邮箱二维码提前截图存到手机相册（离线也能用）</li>
-    <li>Sushi Nami 提前订位</li>
-    <li>确认天府饭店周日是否营业、要不要订位</li>
-  </ul>
-</section>
 
 <section class="block">
   <h2>实用贴士</h2>
@@ -585,8 +581,10 @@
     { name: "Ibirapuera Shopping/Faria Lima", time: "2026-09-13T14:10:00-03:00" },
     { name: "Parque Ibirapuera", time: "2026-09-13T15:30:00-03:00" },
     { name: "天府饭店晚餐", time: "2026-09-13T18:40:00-03:00" },
-    { name: "前往 Tietê 车站", time: "2026-09-13T20:10:00-03:00" },
-    { name: "车站等候开始", time: "2026-09-13T20:55:00-03:00" },
+    { name: "地铁前往 Terraço Itália", time: "2026-09-13T20:10:00-03:00" },
+    { name: "Terraço Itália 看夜景", time: "2026-09-13T20:55:00-03:00" },
+    { name: "前往 Tietê 车站", time: "2026-09-13T21:55:00-03:00" },
+    { name: "车站等候开始", time: "2026-09-13T22:15:00-03:00" },
     { name: "返程大巴出发", time: "2026-09-14T00:05:00-03:00" },
   ];
 
